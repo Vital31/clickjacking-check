@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickjacking Защита</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        iframe {
+            width: 80%;
+            height: 300px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Проверка Clickjacking</h1>
+    <p>Попробуйте загрузить страницу в iframe ниже:</p>
+    <iframe src="https://example.com" sandbox="allow-scripts"></iframe>
+    <p>Способы защиты от Clickjacking:</p>
+    <ul>
+        <li>Добавление заголовка <code>X-Frame-Options: DENY</code></li>
+        <li>Использование <code>Content-Security-Policy: frame-ancestors 'none'</code></li>
+        <li>Применение JavaScript для выхода из iframe</li>
+    </ul>
+</body>
+</html>
